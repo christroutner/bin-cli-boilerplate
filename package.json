@@ -12,7 +12,9 @@
     "@oclif/config": "^1.17.0",
     "@oclif/plugin-help": "^3.2.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "pkg": "4.4.9"
+  },
   "engines": {
     "node": ">=8.0.0"
   },
@@ -41,6 +43,10 @@
     "posttest": "eslint .",
     "prepack": "oclif-dev manifest && oclif-dev readme",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "pkg": "pkg --out-path dist/ ."
+  },
+  "pkg": {
+    "scripts": "src/commands/**/*.js"
   }
 }
